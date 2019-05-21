@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "DHKCardController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    DHKCardController *cardC = [DHKCardController new];
+    [cardC fetchCardWithCompletion:^(DHKCard * _Nullable card) {
+        
+    }];
     return YES;
 }
 
