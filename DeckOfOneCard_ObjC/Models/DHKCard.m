@@ -30,7 +30,6 @@
 
     //2 call memberwise init
     return [self initWithSuit:suit url:url code:code];
-    
 }
 
 @end

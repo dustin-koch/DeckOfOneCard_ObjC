@@ -6,7 +6,7 @@
 //  Copyright © 2019 Rabbit Hole Fashion. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "DHKCard.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void) fetchCardWithCompletion:(void (^) (DHKCard * _Nullable card))completion;
 
+- (void) fetchImageFrom:(DHKCard *)card completion:(void (^) (UIImage * _Nullable image)) completion;
 
 @end
 

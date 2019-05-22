@@ -36,7 +36,30 @@
             }
         }
         completion(nil);
-    }] resume]; 
-}
+    }] resume];
+}//END OF Card Fetch
+
+- (void)fetchImageFrom:(DHKCard *)card completion:(void (^)(UIImage * _Nullable))completion
+{
+    //construct URL
+    NSURL *imageUrl = [NSURL URLWithString:card.imageUrl];
+    NSLog(@"%@", [imageUrl absoluteString]);
+    //data task for image; complete w/ image
+    [[[NSURLSession sharedSession] dataTaskWithURL:imageUrl completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"There was an error in %s: %@, %@", __PRETTY_FUNCTION__, error, [error localizedDescription]);
+            completion(nil);
+            return;
+        }
+        if (data) {
+            UIImage *cardImage = [UIImage imageWithData:data];
+            completion(cardImage);
+            return;
+        }
+        completion(nil);
+    }] resume];
+    
+}//END OF IMAGE FETCH
+
 
 @end

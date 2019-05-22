@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Card View Controller-->
         <scene sceneID="iQY-wN-dOT">
             <objects>
-                <viewController id="b60-Uh-c19" sceneMemberID="viewController">
+                <viewController id="b60-Uh-c19" customClass="CardViewController" customModule="DeckOfOneCard_ObjC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Y5-b7-3Ek">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,6 +58,9 @@
                                 <state key="normal" title="DRAW CARD">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="drawCardButtonTapped:" destination="b60-Uh-c19" eventType="touchUpInside" id="V4i-c9-zUq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -72,6 +75,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HCw-pI-qeW"/>
                     </view>
+                    <connections>
+                        <outlet property="cardImageView" destination="4ND-Lo-LZa" id="KkW-2i-DbZ"/>
+                        <outlet property="suitLabel" destination="nau-Sa-OA4" id="sQP-tB-bxR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SuS-Dd-haP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
